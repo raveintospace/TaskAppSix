@@ -6,13 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
+    
+    @Query private var myTasks: [MyTasks]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(myTasks) { myTask in
+            VStack {
+                Text(myTask.title)
+                Text(myTask.details)
+            }
+        }
     }
 }
 
-#Preview {
+#Preview(traits: .sampleData){
     ContentView()
 }

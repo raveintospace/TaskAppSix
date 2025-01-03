@@ -43,3 +43,9 @@ struct SampleData: PreviewModifier {
         content.modelContainer(context)
     }
 }
+
+// Apple code to use our sample data with #Preview
+extension PreviewTrait where T == Preview.ViewTraits {
+    @MainActor static var sampleData: Self = .modifier(SampleData())
+}
+
