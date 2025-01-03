@@ -11,9 +11,7 @@ import SwiftData
 @main
 struct TaskAppSixApp: App {
     var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            
-        ])
+        let schema = Schema([MyTasks.self])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
         do {
